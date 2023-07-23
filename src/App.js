@@ -88,6 +88,7 @@ class App extends React.Component {
     const {
       data: {
         data: { movies }
+
       }
     } = await axios.get(
       "https://yts-proxy.now.sh/list_movies.json?sort_by=rating"
@@ -115,6 +116,7 @@ class App extends React.Component {
                 title={movie.title}
                 summary={movie.summary}
                 poster={movie.medium_cover_image}
+                genres ={movie.genres}
               />
             ))}
           </div>
@@ -122,8 +124,9 @@ class App extends React.Component {
       </section>
     );
   
-  //     return <div>{isLoading ? "Loading..." : movies.map(movie => {
-  //   console.log(movie.title);  
+  //     return (<div className="movies">{movies.map(movie => 
+  
+  //       // console.log(movie.title);  
   //     <Movie
   //       key =   {movie.id}
   //       id = {movie.id}
@@ -132,7 +135,7 @@ class App extends React.Component {
   //       summary= {movie.summary}  
   //       poster = {movie.medium_cover_image} />
     
-  // })}   </div>;
+  // )}   </div>);
   
   
   }
